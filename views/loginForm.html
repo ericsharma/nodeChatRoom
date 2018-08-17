@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Login</title>
+    <!-- <link rel="stylesheet" type="text/css" href="/public/css/master.css"> -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+
+
+    <!-- <script type="text/javascript" src="/public/js/script1.js"> -->
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <form method="post" action="/login" >
+    <div>
+        <label>Username:</label>
+        <input type="text" name="username"/>
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="password" name="password"/>
+    </div>
+    <div>
+        <input type="submit" value="Log In"/>
+    </div>
+</form>
+  </body>
+</html>
