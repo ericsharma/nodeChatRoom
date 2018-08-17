@@ -11,12 +11,13 @@ var io = require('socket.io')(http);
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var profileRouter = require('./routes/profile');
-var newUserRouter= require('./routes/newUser')
-var loginRouter = require('./routes/login')
-var indexRouter = require('./routes/index')
-var passport = require('./strategies/localStrategy')
+var newUserRouter= require('./routes/newUser');
+var loginRouter = require('./routes/login');
+var indexRouter = require('./routes/index');
+var passport = require('passport');
 
 
+// require('./strategies/localStrategy')(passport);
 
 
 
@@ -49,7 +50,11 @@ app.use('/', indexRouter)
 
 app.use('/profile', profileRouter);
 
-
+app.post('/logout', function(req, res){
+  res.send('thisssss')
+  req.logout();
+  res.redirect('/');
+})
 
 app.use("/new", newUserRouter);
 
